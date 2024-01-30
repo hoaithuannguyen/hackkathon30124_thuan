@@ -6,7 +6,7 @@ const userRoutes = express.Router()
 //lay tat ca user
 export const getAll = async(req:Request,res:Response)=>{
     try {
-       const [result] = await getAllMysql()
+       const result = await getAllMysql()
        console.log("result",result);
        
         res.status(200).json({
@@ -36,10 +36,12 @@ export const deleteUser=async(req:Request,res:Response)=>{
     try {
         const result = await deleteUserMysql(Number(req.params.id))
         console.log("result",result);
-        const products = await getAllMysql();
+        const todo = await getAllMysql();
+        console.log("todo1111111111",todo);
+        
         res.status(200).json({
             message:"xoa thanh cong",
-            data:products,
+            todo
         })
         
     } catch (error) {
@@ -54,8 +56,11 @@ export const updateUser = async (req: Request, res: Response)=>{
     const {useName} = req.body
     const {id} = req.params
     const result = await updateUserSql(useName,Number(id))
+        const todo = await getAllMysql();
+    console.log("todo1232323",todo);
+    
     res.status(200).json({
-        result,
+        todo,
         message:"sua thanh cong"
     })
     } catch (error) {

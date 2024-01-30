@@ -5,8 +5,9 @@ import pool from "../config/db.config"
 const userRoutes = express.Router()
 
 export const getAllMysql = async()=>{
-        const result = mysql.createPool(pool)
-        return  result.execute("SELECT * FROM users")
+        const user = mysql.createPool(pool)
+       const [todo] = await user.execute("select * from users")
+       return todo
 }
 export async function addUserSql(userName:any) {
     console.log(userName);
@@ -28,12 +29,12 @@ export const deleteUserMysql=async(id:number)=>{
 }
 //sua?
 export const updateUserSql = async (nameProduct:string,id:number)=>{
-    console.log("nameProduct",nameProduct);
-    console.log("id",id);
-    
     try {
         const user = mysql.createPool(pool)
         const [result] = await user.execute("UPDATE users SET useName = ? WHERE id = ? ",[nameProduct,id])
+
+        console.log("result,result",result);
+        
         return result
     } catch (error) {
         console.log(error)

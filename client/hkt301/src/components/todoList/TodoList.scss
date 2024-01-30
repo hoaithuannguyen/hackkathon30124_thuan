@@ -1,0 +1,81 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 60%;
+    height: auto;
+    border: 1px solid gainsboro;
+    margin-top: 100px;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(62, 62, 247);
+
+    .container_1 {
+        margin-left: 40%;
+        margin-top: 1%;
+    }
+
+    .container_2 {
+        margin-left: 8%;
+        margin-top: 2%;
+
+        input {
+            width: 600px;
+            height: 30px;
+            outline: none;
+            padding: 5px;
+        }
+
+        .btn_add {
+            width: 50px;
+            height: 30px;
+            background-color: rgb(62, 62, 247);
+            color: white;
+            border: 0;
+            border-radius: 2px;
+            margin-left: 1px;
+        }
+    }
+
+    .container_3 {
+        display: flex;
+
+        .name_todo {
+            margin-left: 20px;
+            margin-top: 2%;
+        }
+
+        .check_box {
+            margin: 0;
+            width: 20px;
+            height: auto;
+            margin-left: 60px;
+            margin-top: 2%;
+        }
+
+        .btn_edit {
+            margin: 0;
+            margin-top: 2%;
+        }
+
+        .btn_delete {
+            margin: 0;
+            margin-top: 2%;
+            margin-right: 35px;
+        }
+    }
+
+    .container_4 {
+        margin-left: 8%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        background-color: rgb(217, 215, 215);
+        width: 650px;
+        height: 50px;
+        padding-top: 15px;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+}
